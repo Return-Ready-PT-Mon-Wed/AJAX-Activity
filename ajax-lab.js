@@ -9,8 +9,8 @@ xhr.onreadystatechange = function () {
     }
 };
 function sendAJAX() {
-}
+
 xhr.open('GET', 'https://dog.ceo/api/breeds/image/random/3');
 
-xhr.send();
-
+    xhr.send();
+}
