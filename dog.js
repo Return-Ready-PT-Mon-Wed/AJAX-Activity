@@ -10,4 +10,7 @@ xhr.onreadystatechange = () => {
 };
 
 xhr.open('GET', 'https://dog.ceo/api/breeds/image/random');
-xhr.send();
+const revealBtn = document.getElementById('revealBtn');
+function sendAJAX() {
+    xhr.send();
+}
