@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Activity</title>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                let myImg = JSON.parse(xhr.responseText);
+                document.getElementById("ajax").src = myImg.message;
+            }
+        };
+        xhr.open("GET", "https://dog.ceo/api/breeds/image/random"); 
+        function sendAJAX() {
+            xhr.send();
+            
+        };
+
+        
+    </script>
+</head>
+<body>
+   <img src="" id="ajax">
+   <button id="fetch" onclick="sendAJAX()">Submit</button>
+</body>
+</html>
