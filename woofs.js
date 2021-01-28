@@ -23,17 +23,3 @@ function sendAJAX() {
   }
  )
 };
-
-// xhr.open("GET", "https://dog.ceo/api/breeds/image/random/3");
-
-// function sendAJAX() {
-//   xhr.send();
-// }
-
-
-// let xhr = new XMLHttpRequest();
-
-// xhr.onreadystatechange = function () {
-//     if (xhr.readyState === 4) {
-//       var n = JSON.parse(xhr.responseText);
-//       var sec = JSON.parse(xhr.responseText);
