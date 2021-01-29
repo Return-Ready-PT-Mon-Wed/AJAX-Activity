@@ -8,6 +8,7 @@ async function getRandomPup() {
   const json = await response.json(); // parse into json
   console.log(json.message);
 
+  //
   // foreach iterates over the message array
   json.message.forEach((bitcoinPupImage) => {
     // create template literal for Dom Elements
@@ -20,14 +21,6 @@ async function getRandomPup() {
             </div>
         </div>
         `;
-
-    //  function generateCards(json) {
-    //    const container = document.createElement("container");
-    //    randomPupList.appendChild(container); // create template literal
-    //    container.innerHTML = `
-
-    //      `;
-    //  }
   });
 }
 //button activates the function
