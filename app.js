@@ -3,6 +3,7 @@ const btn = document.querySelector(".btn");
 const randomPupElement = document.querySelector(".card-group");
 
 async function getRandomPup() {
+  randomPupElement.innerHTML = "";
   const response = await fetch(ApiHttps); // resolve promise
   const json = await response.json(); // parse into json
   console.log(json.message);
