@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Activity</title>
+    <script>
+        function sendAJAX() {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                let myImg = JSON.parse(xhr.responseText);
+                document.getElementById("ajax").src = myImg.message;
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.open("GET", "https://dog.ceo/api/breeds/image/random", true); 
+        
+            xhr.send();
+            
+        };
+
+        function sendAJAX3() {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                let myImg = JSON.parse(xhr.responseText);
+                document.getElementById("ajax1").src = myImg.message[0];
+                document.getElementById("ajax2").src = myImg.message[1];
+                document.getElementById("ajax3").src = myImg.message[2];
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.open("GET", "https://dog.ceo/api/breeds/image/random/3"); 
+        
+            xhr.send();
+            
+        };
+        
+    </script>
+</head>
+<body>
+   <img src="" id="ajax" width="33%" height="33%">
+   <button id="fetch" onclick="sendAJAX()">Click For One</button>
+   <img src="" id="ajax1" width="33%" height="33%">
+   <img src="" id="ajax2"width="33%" height="33%">
+   <img src="" id="ajax3"width="33%" height="33%">
+   <button id="fetch3" onclick="sendAJAX3()">Click For Three</button>
+</body>
+</html>
