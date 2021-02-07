@@ -14,3 +14,8 @@ xhr.send(null);                                 // Send the request
 // You will not get a server status
 // You can set the conditional statement to true on line 5 as shown below
 // if(true) {
+
+Dog API Website Documentation
+  https://dog.ceo/dog-api/documentation/random
+
+search: javascript return value from callback function

@@ -1,23 +1,25 @@
 
 function getDogs() {
-    //STEP 1 - CREATE an object
-    var xmlhttprequest = new XMLHttpRequest();
+    let xmlhttprequest = new XMLHttpRequest();     //CREATE an object
 
-    //STEP 2 - DEFINE a callback function
-    xmlhttprequest.onreadystatechange = function () {
+    xmlhttprequest.onreadystatechange = function () { //DEFINE a callback function
         if (xmlhttprequest.readyState === 4 && xmlhttprequest.status === 200) {
         
-            let data = JSON.parse(xmlhttprequest.responseText); //store the parsed JSON responseText in data object/variable
-            console.log(data.message); 
-            document.getElementById("img1").src = data.message; //inserts the parsed message in data inside <img> in html
-
+        let data = JSON.parse(xmlhttprequest.responseText); //store the parsed JSON responseText in data object/variable
+        console.log(data.message); //display result of AJAX request in console
+            
+        document.getElementById("img1").src = data.message[0]; //inserts parsed message in data inside <img> in html
+        document.getElementById("img2").src = data.message[1];
+        document.getElementById("img3").src = data.message[2];
+        
         }
     };
-    //STEP 3 - OPEN a request
-    xmlhttprequest.open('GET', 'https://dog.ceo/api/breeds/image/random');
-    //STEP 4 - SEND the request
-    xmlhttprequest.send();
+    
+    xmlhttprequest.open('GET', 'https://dog.ceo/api/breeds/image/random/3'); //opens a request
+    
+    xmlhttprequest.send(); //sends request
 
 }
 
-//javascript return value from callback function
+
+
